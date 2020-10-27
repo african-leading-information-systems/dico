@@ -2,6 +2,11 @@
 
 ## Introduction
 
+It's basically livewire based as scaffolding for the moment for the CRUD, but you can still do without that and use your tools yourself. Dico uses boostrap as the base UI, 
+but you can still push package views and customize them.
+
+**We are planning to add more scaffolding, so you will have the flexibility to choose the right scaffold for you.**
+
 ## Installation
 Require this package in your composer.json and update composer.
 
