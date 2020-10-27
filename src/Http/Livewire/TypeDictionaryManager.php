@@ -57,10 +57,9 @@ class TypeDictionaryManager extends Component
 
     private function showForm($id = null)
     {
-        if ($id) {
-            $this->type = $this->getTypeDico()->findOrfail($id);
-            $this->setType();
-        }
+        $this->type = is_null($id) ? null : $this->getTypeDico()->findOrfail($id);
+
+        $this->setType();
 
         $this->setType();
     }

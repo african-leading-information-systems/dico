@@ -34,10 +34,7 @@ class DictionaryManager extends Component
 
     private function showForm($id = null)
     {
-        if ($id) {
-            $this->dictionary = $this->getDicoModel()->findOrfail($id);
-            $this->setType();
-        }
+        $this->dictionary = is_null($id) ? null : $this->getDicoModel()->findOrfail($id);
 
         $this->setType();
     }
@@ -138,11 +135,11 @@ class DictionaryManager extends Component
 
     private function setType()
     {
-        $this->code = $this->dictionary ? $this->dictionary->code : null;
+        $this->code = is_null($this->dictionary) ? null : $this->dictionary->code;
 
-        $this->description = $this->dictionary ? $this->dictionary->getTranslations()['description'] : null;
+        $this->description = is_null($this->dictionary) ? null : $this->dictionary->getTranslations()['description'];
 
-        $this->type = $this->dictionary ? $this->dictionary->type_dictionary_id : null;
+        $this->type = is_null($this->dictionary) ? null : $this->dictionary->type_dictionary_id;
     }
 
     private function getDicoModel()
