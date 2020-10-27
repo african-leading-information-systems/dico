@@ -9,7 +9,7 @@ class TestCase extends Orchestra
 {
     public function setUp(): void
     {
-        $this->withFactories(__DIR__.'/../database/factories');
+        // $this->withFactories(__DIR__.'/../database/factories');
     }
 
     protected function getPackageProviders($app)
