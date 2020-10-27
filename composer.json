@@ -1,0 +1,19 @@
+{
+    "name": "alis/dico",
+    "description": "Dictionary data manager",
+    "authors": [
+        {
+            "name": "Gabeta Soro",
+            "email": "gabeta.soro@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Alis\\Dico\\": "src/"
+        }
+    },
+    "require": {
+        "livewire/livewire": "^2.2",
+        "spatie/laravel-translatable": "^4.5"
+    }
+}
