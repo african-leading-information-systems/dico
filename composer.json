@@ -1,6 +1,16 @@
 {
     "name": "alis/dico",
     "description": "Dictionary data manager",
+    "keywords": [
+        "alis",
+        "php",
+        "laravel-package",
+        "eloquent",
+        "livewire",
+        "data-manager",
+        "laravel"
+    ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Gabeta Soro",
@@ -15,6 +25,13 @@
     "autoload-dev": {
         "psr-4": {
             "Alis\\Dico\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alis\\Dico\\DicoServiceProvider"
+            ]
         }
     },
     "require": {
