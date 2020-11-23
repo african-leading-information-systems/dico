@@ -51,16 +51,13 @@
                     <td class="text-center">{{ $type->code }}</td>
                     <td>{{ $type->description }}</td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-primary btn-xs survolmt" wire:click.prevent="openModal({{ $type->id }})"
-                                data-tooltip="@lang('dicoLang::messages.buttons.update')"
-                        >
-                            <i class="ti-pencil"></i>
+                        <button type="button" class="btn btn-primary btn-xs" wire:click.prevent="openModal({{ $type->id }})">
+                            @lang('dicoLang::messages.buttons.update')
                         </button>
                         <button onclick="window.event.preventDefault(); confirm('Etes vous sûr?') ? '' : window.event.stopImmediatePropagation()"
-                                type="button" class="btn btn-danger btn-xs survolmt ml-1" wire:click.prevent="delete({{ $type->id }})"
-                                data-tooltip="@lang('dicoLang::messages.buttons.delete')"
+                                type="button" class="btn btn-danger btn-xs ml-1" wire:click.prevent="delete({{ $type->id }})"
                         >
-                            <i class="icon-trash"></i>
+                            @lang('dicoLang::messages.buttons.delete')
                         </button>
                     </td>
                 </tr>
@@ -117,7 +114,6 @@
 @push('dic-script')
     <script>
         Livewire.on('openModal', () => {
-            console.log('okey')
             $('#modal-type-dico').modal()
         })
     </script>

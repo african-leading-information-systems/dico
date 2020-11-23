@@ -60,16 +60,12 @@
                 <td class="text-center">{{ $d->code }}</td>
                 <td>{{ $d->description }}</td>
                 <td class="text-center">
-                    <button type="button" class="btn btn-primary btn-xs survolmt" wire:click.prevent="openModal({{ $d->id }})"
-                            data-tooltip="@lang('dicoLang::messages.buttons.update')"
-                    >
-                        <i class="ti-pencil"></i>
+                    <button type="button" class="btn btn-primary btn-xs" wire:click.prevent="openModal({{ $d->id }})">
+                        @lang('dicoLang::messages.buttons.update')
                     </button>
                     <button type="button" onclick="window.event.preventDefault(); confirm('Etes vous sûr?') ? '' : window.event.stopImmediatePropagation()"
-                            class="btn btn-danger btn-xs survolmt ml-1" wire:click.prevent="delete({{ $d->id }})"
-                            data-tooltip="@lang('dicoLang::messages.buttons.delete')"
-                    >
-                        <i class="icon-trash"></i>
+                            class="btn btn-danger btn-xs ml-1" wire:click.prevent="delete({{ $d->id }})">
+                        @lang('dicoLang::messages.buttons.delete')
                     </button>
                 </td>
             </tr>
