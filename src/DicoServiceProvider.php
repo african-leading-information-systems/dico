@@ -79,6 +79,7 @@ class DicoServiceProvider extends ServiceProvider
 
     private function makeFactory()
     {
+        var_dump(app()->version());
         if (app()->version() < 8) {
             $path = 'Illuminate\Database\Eloquent\Factory';
         } else {
