@@ -16,17 +16,23 @@ class DicoSelect extends Component
     public $name;
     public $placeholder;
     public $value;
+    public $multiple;
 
     /**
      * DicoSelect constructor.
+     *
      * @param array|string $types
      * @param Collection|null $source
      * @param string $name
      * @param bool $wire
      * @param string $class
+     * @param null $value
+     * @param string $placeholder
+     * @param bool $multiple
      */
     public function __construct($types, Collection $source = null, $name = 'dictionary_id',
-                                $wire = false, $class = 'form-control', $value = null, string $placeholder = "CLick to choose")
+                                $wire = false, $class = 'form-control', $value = null, string $placeholder = "CLick to choose",
+                                $multiple = false)
     {
         $this->types = is_string($types) ? explode(',', $types) : $types;
 
@@ -41,6 +47,8 @@ class DicoSelect extends Component
         $this->placeholder = $placeholder;
 
         $this->value = $value;
+
+        $this->multiple = $multiple;
 
         $this->initDico();
     }

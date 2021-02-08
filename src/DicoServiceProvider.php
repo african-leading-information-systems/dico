@@ -41,8 +41,7 @@ class DicoServiceProvider extends ServiceProvider
 
         $this->migrationPublishing();
 
-        $this->app->make('Illuminate\Database\Eloquent\Factory')
-            ->load(__DIR__.'/../database/factories');
+        $this->makeFactory();
 
         $this->callAfterResolving(BladeCompiler::class, function () {
             Blade::component('dico-description-field', DicoDescriptionField::class);
@@ -76,5 +75,17 @@ class DicoServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => resource_path('views/vendor/dico'),
             ], 'dico-views');
         }
+    }
+
+    private function makeFactory()
+    {
+        if (app()->version() < 8) {
+            $path = 'Illuminate\Database\Eloquent\Factory';
+        } else {
+            $path = 'Illuminate\Database\Eloquent\Factories\Factory';
+        }
+
+        $this->app->make($path)
+            ->load(__DIR__.'/../database/factories');
     }
 }
