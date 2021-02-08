@@ -41,7 +41,7 @@ class DicoServiceProvider extends ServiceProvider
 
         $this->migrationPublishing();
 
-        // $this->makeFactory();
+        $this->makeFactory();
 
         $this->callAfterResolving(BladeCompiler::class, function () {
             Blade::component('dico-description-field', DicoDescriptionField::class);
@@ -79,8 +79,9 @@ class DicoServiceProvider extends ServiceProvider
 
     private function makeFactory()
     {
-        var_dump(app()->version());
-        if (app()->version() < 8) {
+        $version = (explode('.', app()->version()))[0];
+
+        if ($version < 8) {
             $path = 'Illuminate\Database\Eloquent\Factory';
         } else {
             $path = 'Illuminate\Database\Eloquent\Factories\Factory';
