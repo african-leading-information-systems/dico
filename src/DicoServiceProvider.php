@@ -41,7 +41,7 @@ class DicoServiceProvider extends ServiceProvider
 
         $this->migrationPublishing();
 
-        $this->makeFactory();
+        // $this->makeFactory();
 
         $this->callAfterResolving(BladeCompiler::class, function () {
             Blade::component('dico-description-field', DicoDescriptionField::class);
